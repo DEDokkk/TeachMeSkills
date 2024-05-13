@@ -34,8 +34,9 @@ def randoming_numbers(range_numbers):
 
 def get_numbers(random_numbers):
     print('Enter three numbers or "exit" to exit')
+    cnt = 0
     print(random_numbers)
-    while len(random_numbers) != 0:
+    for i in range(3):
         user_number = (input('Enter number: '))
         if user_number == 'exit':
             quit()
@@ -46,14 +47,9 @@ def get_numbers(random_numbers):
             print('Enter number from range')
             continue
         elif int(user_number) in random_numbers:
-            print('You guessed right!')
-            random_numbers.remove(int(user_number))
-        else:
-            print('Try again')
-            continue
-    print('You won!')
+            cnt += 1
+    print(f'You guessed {cnt} out of 3 numbers!')
     quit()
-
 
 def ygadaika():
     range_numbers = enter_range_numbers()
